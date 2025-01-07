@@ -1,0 +1,262 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+
+    align-items: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+}
+
+.Navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #9e0808;
+    border-bottom: 2px solid black;
+    color: #fff;
+    padding: 1rem 2rem;
+}
+
+.NavTitle {
+    font-size: 1.5rem;
+    font-weight: bold;
+    flex-basis: 20%;
+    text-align: left;
+}
+
+.SearchForm {
+    display: flex;
+    justify-content: flex-end;
+    flex-basis: 35%;
+}
+
+.SearchInput {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 4px 0 0 4px;
+    outline: none;
+    width: 20rem;
+    flex-basis: 70%;
+}
+
+.SearchButton {
+    flex-basis: 30%;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    /* background-color: #007bff; */
+    color: black;
+    border: none;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.SearchButton:hover {
+    background-color: black;
+    color: white;
+}
+
+.SearchInput:focus {
+    outline: 2px solid black;
+}
+
+.ShowsDisplay {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(150px, 1fr));
+    /* display:flex; */
+    justify-content: center;
+    /* flex-wrap: wrap; */
+    gap: 16px;
+    padding: 16px;
+    /* box-sizing: border-box; */
+
+
+}
+
+.ShowCard {
+    display: flex;
+    flex-direction: column;
+    /* max-width: calc(20% -16px);
+    flex: 1 1 calc(20% -16px); */
+    justify-content: space-between;
+    overflow: hidden;
+    padding: 16px;
+    border-radius: 8px;
+    background-color: #9e0808;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+    color: #fff;
+}
+
+.ShowCard:hover {
+    transform: scale(1.05);
+}
+
+.ShowImage {
+    width: 90%;
+    height: 150px;
+    object-fit: cover;
+    align-self: center;
+    border-radius: 8px;
+    margin: 5px;
+}
+
+.ShowTitle {
+    font-size: 1rem;
+    padding: 10px;
+    text-align: center;
+    overflow: hidden;
+    white-space: normal;
+    word-wrap: break-word;
+    margin-bottom: 5px;
+}
+
+.ShowGenre {
+    font-size: 0.9rem;
+    padding: 5px;
+    text-align: left;
+    overflow: hidden;
+    white-space: normal;
+    word-wrap: break-word;
+
+}
+
+.Language {
+    font-size: 0.9rem;
+    padding: 5px;
+    text-align: left;
+    overflow: hidden;
+    white-space: normal;
+    word-wrap: break-word;
+}
+
+.Rating {
+    font-size: 0.9rem;
+    padding: 5px;
+    text-align: left;
+    overflow: hidden;
+    white-space: normal;
+    word-wrap: break-word;
+}
+
+
+.WatchNow {
+    background-color: #ff5733;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    margin: 10px;
+    ;
+    padding: 10px 10px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-align: center;
+}
+
+.WatchNow:hover {
+    background-color: #e64a19;
+}
+
+.UnsupportedScreen
+{
+    display:none;
+}
+
+@media (max-width: 1100px) {
+    .Navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .NavTitle {
+        flex-basis: 100%;
+        text-align: center;
+    }
+
+
+
+    .SearchForm {
+
+        align-items: flex-start;
+        align-self: 100%;
+        margin-top: 1rem;
+        width: 80%;
+    }
+
+    .Searchinput {
+        flex-basis: 70%;
+        border-radius: 4px 4px 0 0;
+    }
+
+    .SearchButton {
+        border-radius: 0 0 4px 4px;
+        flex-basis: 30%;
+    }
+
+    .ShowsDisplay {
+        grid-template-columns: repeat(4, minmax(150px, 1fr));
+        display: grid;
+
+        justify-content: center;
+
+        gap: 16px;
+        padding: 16px;
+
+    }
+}
+
+@media(540px<width<=800px)
+{
+    .ShowsDisplay {
+        grid-template-columns: repeat(3, minmax(150px, 1fr));
+        display: grid;
+
+        justify-content: center;
+
+        gap: 16px;
+        padding: 16px;
+
+    }
+}
+
+@media(460px<width<=540px)
+{
+    .ShowsDisplay {
+        grid-template-columns: repeat(2, minmax(150px, 1fr));
+        display: grid;
+
+        justify-content: center;
+
+        gap: 16px;
+        padding: 16px;
+
+    }
+}
+
+@media(width<460px)
+{
+
+    .UnsupportedScreen
+    {
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        color: black;
+        text-align: center;
+        height: 100vh;
+    }
+    .Navbar
+    {
+        display: none;
+    }
+    .ShowsDisplay
+    {
+        display: none;
+    }
+}
