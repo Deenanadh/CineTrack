@@ -99,8 +99,8 @@ body {
 
 .ShowImage {
     width: 90%;
-    height: 150px;
-    object-fit: cover;
+    height: 200px;
+    object-fit: fill;
     align-self: center;
     border-radius: 8px;
     margin: 5px;
