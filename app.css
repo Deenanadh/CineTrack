@@ -1,3 +1,4 @@
+/* General Styles */
 * {
     margin: 0;
     padding: 0;
@@ -5,258 +6,226 @@
 }
 
 body {
-
+    font-family: Arial, sans-serif;
+    background-color: #0d0d0d;
+    color: white;
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-
 }
 
+/* Navbar Styling */
 .Navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #9e0808;
-    border-bottom: 2px solid black;
-    color: #fff;
     padding: 1rem 2rem;
+    width: 100%;
+    background-color: #9e0808;
+    color: white;
 }
 
-.NavTitle {
-    font-size: 1.5rem;
+.NavTitle h1 {
+    margin: 0;
+}
+
+.NavButton {
+    padding: 0.5rem 1rem;
+    border: none;
+    background-color: orange;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.NavButton:hover {
+    background-color: darkorange;
+}
+
+.NavButton.active {
+    background-color: #ff6700; /* Active state color */
     font-weight: bold;
-    flex-basis: 20%;
-    text-align: left;
+    cursor: default;
 }
 
 .SearchForm {
     display: flex;
-    justify-content: flex-end;
-    flex-basis: 35%;
+    gap: 0.5rem;
 }
 
 .SearchInput {
-    padding: 0.5rem 1rem;
-    font-size: 1rem;
+    padding: 0.5rem;
     border: none;
-    border-radius: 4px 0 0 4px;
+    border-radius: 5px;
     outline: none;
-    width: 20rem;
-    flex-basis: 70%;
+    font-size: 1rem;
+    width: 15rem;
 }
 
 .SearchButton {
-    flex-basis: 30%;
     padding: 0.5rem 1rem;
-    font-size: 1rem;
-    /* background-color: #007bff; */
-    color: black;
     border: none;
-    border-radius: 0 4px 4px 0;
+    background-color: orange;
+    color: white;
+    border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s;
 }
 
 .SearchButton:hover {
-    background-color: black;
+    background-color: darkorange;
+}
+
+.NavOptions {
+    display: flex;
+    gap: 1rem;
+}
+
+.NavButton {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    border: none;
+    background-color: #9e0808;
+    /* background-color: orange; */
     color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 
-.SearchInput:focus {
-    outline: 2px solid black;
+.NavButton:hover {
+    background-color: darkorange;
 }
 
+
+/* Show Cards Styling */
 .ShowsDisplay {
     display: grid;
-    grid-template-columns: repeat(5, minmax(150px, 1fr));
-    /* display:flex; */
-    justify-content: center;
-    /* flex-wrap: wrap; */
-    gap: 16px;
-    padding: 16px;
-    /* box-sizing: border-box; */
-
-
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    padding: 2rem;
+    width: 100%;
+    max-width: 1200px;
 }
 
 .ShowCard {
-    display: flex;
-    flex-direction: column;
-    /* max-width: calc(20% -16px);
-    flex: 1 1 calc(20% -16px); */
-    justify-content: space-between;
-    overflow: hidden;
-    padding: 16px;
-    border-radius: 8px;
     background-color: #9e0808;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s;
-    color: #fff;
+    border-radius: 10px;
+    padding: 1rem;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+    text-align: left; /* Align text to the left */
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
 }
 
 .ShowCard:hover {
     transform: scale(1.05);
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.5);
 }
 
 .ShowImage {
-    width: 90%;
-    height: 200px;
-    object-fit: fill;
-    align-self: center;
-    border-radius: 8px;
-    margin: 5px;
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 1rem;
 }
 
 .ShowTitle {
-    font-size: 1rem;
-    padding: 10px;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
     text-align: center;
-    overflow: hidden;
-    white-space: normal;
-    word-wrap: break-word;
-    margin-bottom: 5px;
 }
 
-.ShowGenre {
+.ShowGenre, .Language, .Rating {
     font-size: 0.9rem;
-    padding: 5px;
-    text-align: left;
-    overflow: hidden;
-    white-space: normal;
-    word-wrap: break-word;
-
-}
-
-.Language {
-    font-size: 0.9rem;
-    padding: 5px;
-    text-align: left;
-    overflow: hidden;
-    white-space: normal;
-    word-wrap: break-word;
-}
-
-.Rating {
-    font-size: 0.9rem;
-    padding: 5px;
-    text-align: left;
-    overflow: hidden;
-    white-space: normal;
-    word-wrap: break-word;
+    margin: 0.3rem 0;
+    color: #f0f0f0;
 }
 
 
-.WatchNow {
-    background-color: #ff5733;
+/* Unsupported Screen Styling */
+.UnsupportedScreen {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+    color: white;
+    background-color: #0d0d0d;
+}
+
+@media (max-width: 460px) {
+    .Navbar, .ShowsDisplay {
+        display: none;
+    }
+
+    .UnsupportedScreen {
+        display: flex;
+    }
+}
+
+.NoResults {
+    text-align: center;
+    font-size: 1.2rem;
+    color: orange;
+    margin-top: 2rem;
+}
+
+/* Modal Styling */
+.ModalContainer {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    padding: 2rem;
+}
+
+.ModalContent {
+    background-color: #9e0808;
+    padding: 1.5rem;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 900px;
+    color: white;
+    text-align: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.ModalImage {
+    width: 70%;
+    aspect-ratio: 16/9;
+    border-radius: 10px;
+    margin: 1rem 0;
+}
+
+.CloseButton, .VideoButton {
+    align-self: flex-start;
+    background-color: orange;
     color: white;
     border: none;
-    border-radius: 8px;
-    margin: 10px;
-    ;
-    padding: 10px 10px;
-    font-size: 1rem;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
     cursor: pointer;
+    margin-top: 1rem;
     transition: background-color 0.3s;
-    text-align: center;
 }
 
-.WatchNow:hover {
-    background-color: #e64a19;
+.CloseButton:hover, .VideoButton:hover {
+    background-color: darkorange;
 }
 
-.UnsupportedScreen
-{
-    display:none;
-}
-
-@media (max-width: 1100px) {
-    .Navbar {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .NavTitle {
-        flex-basis: 100%;
-        text-align: center;
-    }
-
-
-
-    .SearchForm {
-
-        align-items: flex-start;
-        align-self: 100%;
-        margin-top: 1rem;
-        width: 80%;
-    }
-
-    .Searchinput {
-        flex-basis: 70%;
-        border-radius: 4px 4px 0 0;
-    }
-
-    .SearchButton {
-        border-radius: 0 0 4px 4px;
-        flex-basis: 30%;
-    }
-
-    .ShowsDisplay {
-        grid-template-columns: repeat(4, minmax(150px, 1fr));
-        display: grid;
-
-        justify-content: center;
-
-        gap: 16px;
-        padding: 16px;
-
-    }
-}
-
-@media(540px<width<=800px)
-{
-    .ShowsDisplay {
-        grid-template-columns: repeat(3, minmax(150px, 1fr));
-        display: grid;
-
-        justify-content: center;
-
-        gap: 16px;
-        padding: 16px;
-
-    }
-}
-
-@media(460px<width<=540px)
-{
-    .ShowsDisplay {
-        grid-template-columns: repeat(2, minmax(150px, 1fr));
-        display: grid;
-
-        justify-content: center;
-
-        gap: 16px;
-        padding: 16px;
-
-    }
-}
-
-@media(width<460px)
-{
-
-    .UnsupportedScreen
-    {
-        display:flex;
-        justify-content: center;
-        align-items: center;
-        color: black;
-        text-align: center;
-        height: 100vh;
-    }
-    .Navbar
-    {
-        display: none;
-    }
-    .ShowsDisplay
-    {
-        display: none;
-    }
+.ModalTitle, .ModalGenre, .ModalLanguage, .ModalRating, .ModalCast, .ModalSummary {
+    margin: 0.5rem 0;
+    text-align: left;
+    width: 100%;
 }

@@ -1,27 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="app.css">
-    <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <title>CineTrack</title>
 </head>
-
 <body>
     <div class="UnsupportedScreen">
         <h1>Unsupported Screen Size</h1>
     </div>
     <nav id="Navbar" class="Navbar">
-        <div class="NavTitle"><h1>CineTrack</h1></div>
+        <div class="NavTitle" id="HomeButton"><h1>CineTrack</h1></div>
+        
+        <div class="NavOptions">
+            <button class="NavButton" id="TopRatedButton">Top Rated Shows</button>
+            <button class="NavButton" id="PeopleInfoButton">People</button>
+        </div>
         <form class="SearchForm" id="SearchForm">
             <input class="SearchInput" type="text" placeholder="Search" name="SearchInput">
-            <button class="SearchButton">Search</button>
+            <button class="SearchButton" type="submit">Search</button>
         </form>
     </nav>
     <div class="ShowsDisplay" id="ShowsDisplay"></div>
     <script src="app.js"></script>
 </body>
-
 </html>
